@@ -1,0 +1,177 @@
+%\documentclass[a4paper,landscape,11pt]{article}
+\documentclass[a4paper,11pt]{article} 
+%\usepackage[T1,T2A]{fontenc}
+\usepackage[utf8x]{inputenc}
+%\usepackage[english,ukrainian,russian]{babel} 
+\usepackage[english,russian]{babel} 
+\usepackage{wrapfig}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{booktabs}
+\usepackage{pifont}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+
+\usepackage{tikz}
+\usepackage{siunitx}
+\usepackage[american,cuteinductors,smartlabels]{circuitikz}
+
+\usepackage{hyperref}
+
+\usepackage{advdate}
+%\usepackage{showframe} % для отладки позиции на странице
+\usepackage{cancel}
+
+%\setlength{\voffset}{-72pt} %отступ сверху - чтобы увидеть откомментарить \usepackage{showframe}
+%\setlength{\voffset}{-36pt} %landscape
+%\setlength{\footskip}{-20pt} %landscape
+\setlength{\topmargin}{0pt} 
+%\setlength{\headheight{1pt}
+\setlength{\headsep}{0pt}
+%\setlength{\hoffset}{-72pt} %landscape
+\setlength{\marginparwidth}{0pt}
+%\setlength{\textwidth}{530pt} %landscape
+%\setlength{\textheight}{808pt} %landscape
+
+
+%\author{ Прокшин Артем \\
+%\small ЛЭТИ\\
+%\small \texttt{taybola@gmail.com}}
+
+%\date{}
+%abcdefghijklmnop
+
+
+\newcommand*\OK{&\small \ding{51}$\!\!_\circ$} % начал защищать
+\newcommand*\Ok{&\small \ding{51}$\!\!_\circ$} % начал защищатi
+\newcommand*\ok{&{\small \ding{51}}} % присутствовал
+\newcommand*\oK{&{\small \ding{51}?}} % присутствовал?
+\newcommand*\no{&{\small }} % отсутствовал
+\newcommand*\D{\tiny\ding{48}} % защита, defend
+\newcommand*\da{&{\small\ding{48}$\!\!_1$}} % защита, defend
+\newcommand*\dab{&{\small\ding{48}$\!\!^1_2$}} % защита, defend
+\newcommand*\ab{&{\small\ding{48}$\!\!^1_2$}} % защита, defend
+\newcommand*\ad{&{\small${}^1\!\!$\ding{48}$\!\!_4$}} % защита, defend
+%\newcommand*\ab{&{\small\ding{48}$\!\!^1_2$}} % защита, defend
+\newcommand*\bc{&{\small\ding{48}$\!\!^2_3$}} % защита, defend
+\newcommand*\dabc{&{\small\ding{48}$\!\!^1_{23}$}} % защита, defend
+\newcommand*\dabcd{&{\small\ding{48}$\!\!^{12}_{34}$}} % защита, defend
+\newcommand*\ac{&{\small\ding{48}$\!\!^1_{23}$}} % защита, defend
+\newcommand*\db{&{\small\ding{48}$\!\!_2$}} % защита, defend
+\newcommand*\dc{&{\small\ding{48}$\!\!_3$}} % защита, defend
+\newcommand*\dd{&{\small\ding{48}$\!\!_4$}} % защита, defend
+\newcommand*\bd{&{\small${}^2\!\!$\ding{48}$\!\!^3_{4}$}} % защита, defend
+\newcommand*\de{&{\small\ding{48}$\!\!_5$}} % защита, defend
+\newcommand*\dE{&{\small${}^4\!\!\!$\ding{48}$\!\!_5$}} % защита, defend
+\newcommand*\cd{&{\small\ding{48}$\!\!^3_4$}} % защита, defend
+\newcommand*\dg{&{\small\ding{48}$\!\!_6$}} % защита, defend
+\newcommand*\fg{&{\small${}^6\!\!$\ding{48}$\!\!_7$}} % защита, defend
+\newcommand*\dH{&{\small\ding{48}$\!\!_8$}} % защита, defend
+\newcommand*\gh{&{\small\ding{48}$\!\!^7_8$}} % защита, defend
+\newcommand*\fh{&{\small\ding{48}$\!\!^7_{89}$}} % защита, defend 
+\newcommand*\ce{&{\small${}^3\!\!$\ding{48}$\!\!_5$}} % защита, defend
+\newcommand*\ef{&{\small${}^5\!\!$\ding{48}$\!\!_6$}} % защита, defend
+%\newcommand*\dh{&{\small\ding{48}$\!\!_8$}} % защита, defend
+\newcommand*\di{&{\small\ding{48}$\!\!_9$}} % защита, defend
+\newcommand*\cdef{&{\small ${}^2_4\!\!$\ding{48}$\!\!^{3}_{5}$}} % защита, defend
+\newcommand*\cde{&{\small ${}^2\!\!$\ding{48}$\!\!^{3}_{5}$}} % защита, defend
+\newcommand*\efg{&{\small ${}^5\!\!$\ding{48}$\!\!^{6}_{7}$}} % защита, defend
+\newcommand*\befgh{&{\small ${}_2^5\!\!$\ding{48}$\!\!^{6}_{78}$}} % защита, defend
+\newcommand*\Dh{&{\small${}^4\!\!$\ding{48}$\!\!_8$}} % защита, defend
+\newcommand*\cfg{&{\small ${}^3\!\!$\ding{48}$\!\!^{6}_{7}$}} % защита, defend
+\newcommand*\fgh{&{\small ${}^6\!\!$\ding{48}$\!\!^{7}_{8}$}} % защита, defend
+\newcommand*\bce{&{\small ${}^2\!\!$\ding{48}$\!\!^{3}_{5}$}} % защита, defend
+\newcommand*\dO{&{\small\ding{48}$\!\!_{15}$}}
+\newcommand*\Skip{\noindent\rule{0.3cm}{0.9pt}}
+
+
+\begin{document}
+%\thispagestyle{empty}
+% or
+\pagenumbering{gobble}
+%\AdvanceDate[-1] % печатаю в субботу а нужна пятница
+\begin{center}\today\end{center}
+\vspace*{1\baselineskip} %landscape
+
+%\begin{table} \centering 
+%\hspace{-6cm} % landscape
+\hspace{-2cm} % portrait
+\newcommand*{\CS}{9pt} % ширина колонки
+\begin{tabular}{p{7pt}|l|p{\CS}|p{\CS}|p{\CS}|p{\CS}|p{\CS}|p{\CS}|p{\CS}|p{\CS}|p{\CS}}
+%\multicolumn{16}{c}{График выполнения лабораторных работ студентами 8871 группы} \\ 
+\multicolumn{11}{c}{Ведомость посещения лабораторных работ по силовой электронике студентами 7405 группы} \\
+\toprule 
+&&&&&&&&&&\\
+&&&&&&&&&&\\
+&&&&&&&&&&\\
+&&&&&&&&&&\\
+&&&&&&&&&&\\
+&&&&&&&&&&\\
+&&\rotatebox{90}{\rlap{\small 11 апреля}}
+&\rotatebox{90}{\rlap{\small 18 апреля}}
+&\rotatebox{90}{\rlap{\small 25 апреля }}
+&\rotatebox{90}{\rlap{\small 2 мая }}
+&\rotatebox{90}{\rlap{\small 23 апреля }}
+&\rotatebox{90}{\rlap{\small 16 мая}}
+&\rotatebox{90}{\rlap{\small 23 мая }}
+&\rotatebox{90}{\rlap{\small }}
+&\rotatebox{90}{\rlap{\small }}
+\\
+\midrule 
+1\,&Акулов Павел Александрович  &&&&&&&&\\
+2\,&Архангельский Юрий Дмитриевич   &&&&&&&&\\
+3\,&Бычков Роман Евгеньевич   &&&&&&&&\\
+4\,&Вахрамеев Василий Евгеньевич   &&&&&&&&\\
+5\,&Геласимов Илья Геннадьевич   &&&&&&&&\\
+\midrule
+6\,&Дмитриева Анастасия Евгеньевна   &&&&&&&&\\
+7\,&Дмитроченко Александр Александрович   &&&&&&&&\\
+8\,&Ермолович Георгий Борисович   &&&&&&&&\\
+9\,&Жардемали Олжас   &&&&&&&&\\ 
+10\,&Иванов Максим Олегович  &&&&&&&&\\
+\midrule
+11\,&Кондратьев Дмитрий Александрович  &&&&&&&&\\
+12\,&Коротин Владимир Вадимович  &&&&&&&&\\
+13\,&Лютов Михаил Андреевич  &&&&&&&&\\
+14\,&Медведев Александр Александрович  &&&&&&&&\\
+15\,&Морозов Александр Сергеевич  &&&&&&&&\\
+\midrule
+16\,&Нефёдов Павел Олегович  &&&&&&&&\\
+17\,&Санников Алексей  &&&&&&&&\\
+18\,&Семенюк Максим Павлович  &&&&&&&&\\ 
+19\,&Эрдэнэцогт Хулан  &&&&&&&&\\ 
+\bottomrule
+\end{tabular} 
+
+\newpage
+%
+\hspace{-2cm} %landscape
+\begin{tabular}{l|llccccccccccccc}
+\multicolumn{10}{c}{выполнение лабораторнах работ, 7405 группа} \\
+\toprule
+&&Л2&Л2& Л6&Л6& Л7&Л7& Л8&Л8&пр.№7\\
+\midrule
+\,&Акулов Павел Александрович  &&&&&&&&\\
+2\,&Архангельский Юрий Дмитриевич   &&&&&&&&\\
+3\,&Бычков Роман Евгеньевич   &&&&&&&&\\
+4\,&Вахрамеев Василий Евгеньевич   &&&&&&&&\\
+5\,&Геласимов Илья Геннадьевич   &&&&&&&&\\
+\midrule
+6\,&Дмитриева Анастасия Евгеньевна   &&&&&&&&\\
+7\,&Дмитроченко Александр Александрович   &&&&&&&&\\
+8\,&Ермолович Георгий Борисович   &&&&&&&&\\
+9\,&Жардемали Олжас   &&&&&&&&\\
+10\,&Иванов Максим Олегович  &&&&&&&&\\
+\midrule
+11\,&Кондратьев Дмитрий Александрович  &&&&&&&&\\
+12\,&Коротин Владимир Вадимович  &&&&&&&&\\
+13\,&Лютов Михаил Андреевич  &&&&&&&&\\
+14\,&Медведев Александр Александрович  &&&&&&&&\\
+15\,&Морозов Александр Сергеевич  &&&&&&&&\\
+\midrule
+16\,&Нефёдов Павел Олегович  &&&&&&&&\\
+17\,&Санников Алексей  &&&&&&&&\\
+18\,&Семенюк Максим Павлович  &&&&&&&&\\
+19\,&Эрдэнэцогт Хулан  &&&&&&&&\\
+\bottomrule
+\end{tabular}
+\end{document}
