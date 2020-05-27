@@ -1,5 +1,7 @@
 %\documentclass[a4paper,landscape,11pt]{article}
 \documentclass[a4paper,11pt]{article} 
+\usepackage[paper=portrait,pagesize]{typearea}
+
 %\usepackage[T1,T2A]{fontenc}
 \usepackage[utf8x]{inputenc}
 %\usepackage[english,ukrainian,russian]{babel} 
@@ -143,12 +145,14 @@
 \end{tabular} 
 
 \newpage
+\KOMAoptions{paper=landscape,pagesize}
+\recalctypearea
 %
-\hspace{-2cm} %landscape
+\hspace{-6.4cm} %landscape
 \begin{tabular}{l|llccccccccccccc}
 \multicolumn{10}{c}{выполнение лабораторнах работ, 7405 группа} \\
 \toprule
-&&Л2&Л2& Л3&Л3& П1&П1& Л8&Л8&пр.№7\\
+	&&Л2&Л2& Л3&Л3& П1&П1& Л4&Л4&пр.№2&пр.№2\\
 \midrule
 \,&Акулов Павел Александрович             &16.04& --- &     &     &29.04&29.04&&&\\
 2\,&Архангельский Юрий Дмитриевич         &     &     &     &     &&&&\\
@@ -163,9 +167,9 @@
 10\,&Иванов Максим Олегович               &&&&&&&&\\
 \midrule
 11\,&Кондратьев Дмитрий Александрович     &&&&&&&&\\
-12\,&Коротин Владимир Вадимович           &11.04&11.04&23.05&23.05&26.04&26.04&&&\\
+	12\,&Коротин Владимир Вадимович           &11.04&11.04&23.05&23.05&26.04&26.04&&&27.05&27.05&\\
 13\,&Лютов Михаил Андреевич               &12.04&25.05&     &     &18.05&18.05&&\\
-14\,&Медведев Александр Александрович     &     &     &     &     &16.05&24.05&&\\
+14\,&Медведев Александр Александрович     &26.05&27.05&     &     &16.05&24.05&&\\
 15\,&Морозов Александр Сергеевич          &&&&&&&&\\
 \midrule
 16\,&Нефёдов Павел Олегович               &&&&&&&&\\
@@ -176,6 +180,8 @@
 \end{tabular}
 
 \newpage
+\KOMAoptions{paper=portrait,pagesize}
+\recalctypearea
 \subsection*{лабораторная №3}
 
 Бычков -- разве у всех преобразование $100 \Rightarrow 120$В?
